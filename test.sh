@@ -1,11 +1,23 @@
 #!/bin/bash
 
-./inference_pipeline.sh
-    -c "meditron-7b"
-    -b "head_qa"
-    -s 0        #(in-context learning shots number, default is zero)
-    -r 0        #(cot prompting; 0: disabled, 1: enabled)
-    -e vllm     #(inference backend, currently support vllm only)
-    -m 0        #(in-context learning with multiple seeds; 0: disabled, 1: enabled)
-    -t 0        #(self-consistency cot prompting; 0: disabled, 1: enabled)
-    -d 32       #(setting batch_size 32 for inference per gpu)
+cd evaluation || exit
+
+# ARGUMENT REFERENCE:
+# -c: Model name
+# -b: Benchmark/Dataset
+# -s: In-context learning shots number (default is 0)
+# -r: CoT prompting (0: disabled, 1: enabled)
+# -e: Inference backend (currently support vllm only)
+# -m: In-context learning with multiple seeds (0: disabled, 1: enabled)
+# -t: Self-consistency CoT prompting (0: disabled, 1: enabled)
+# -d: Batch size for inference per GPU (Set to 4 for T4 16GB)
+
+./inference_pipeline.sh \
+    -c "meditron-7b" \
+    -b "head_qa" \
+    -s 0 \
+    -r 0 \
+    -e vllm \
+    -m 0 \
+    -t 0 \
+    -d 4
