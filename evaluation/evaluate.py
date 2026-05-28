@@ -16,6 +16,7 @@ from collections import Counter
 # nltk.download('punkt')
 
 benchmark_output_type = {
+    "head_qa": "mcq",
     'pubmedqa': 'boolean',
     'newpubmedqa': 'boolean',
     'medmcqa': 'mcq',

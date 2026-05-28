@@ -327,7 +327,7 @@ class HeadQA(Benchmark):
     def __init__(self, name='head_qa') -> None:
         super().__init__(name)
         self.hub_name = 'boysack/head_qa'
-        self.dir_name = 'head_qa'
+        self.dir_name = 'boysack___head_qa'
         self.path = os.path.join(ROOT_DIR, 'benchmarks', 'datasets', self.dir_name)
         self.splits = ['train', 'validation', 'test']
         self.num_options = 5 # 5 train, 4 validation and test
