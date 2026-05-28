@@ -28,6 +28,7 @@ def benchmark_factory(name):
     """
     # Note: benchmark is instantiated *after* selection.
     factories = {
+        "head_qa": HeadQA,
         "medmcqa": MedMCQA,
         "pubmedqa": ClosedPubMedQA,
         "open_pubmedqa": PubMedQA,
@@ -329,7 +330,8 @@ class HeadQA(Benchmark):
         self.dir_name = 'head_qa'
         self.path = os.path.join(ROOT_DIR, 'benchmarks', 'datasets', self.dir_name)
         self.splits = ['train', 'validation', 'test']
-        self.num_options = 4
+        self.num_options = 5 # 5 train, 4 validation and test
+        #self.subsets = ['<If subset exist, specify here>'] # es and en
 
     @staticmethod
     def custom_preprocessing(row):

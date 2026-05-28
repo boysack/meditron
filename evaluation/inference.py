@@ -16,6 +16,7 @@ logger = logging.getLogger("meditron.evaluation.inference")
 logger.setLevel(logging.INFO)
 
 INSTRUCTIONS = {
+    'head_qa': {'task': 'mcq', 'partition': 'validation', 'instructions': 'head_qa'},
     'truthfulqa': {'task': 'mcq', 'partition': 'validation', 'instructions': 'truthfulqa', 'cot_col': 'exp'},
     'medmcqa': {'task': 'mcq', 'partition': 'validation', 'instructions': 'medmcqa', 'cot_col': 'exp'},
     'pubmedqa': {'task': 'mcq', 'partition': 'test', 'instructions': 'pubmedqa', 'cot_col': 'long_answer'},
@@ -28,6 +29,7 @@ INSTRUCTIONS = {
 }
 
 INSTRUCTIONS_SIMPLE = {
+    'head_qa': {'task': 'mcq', 'partition': 'validation', 'instructions': 'mcp'},
     'truthfulqa': {'task': 'mcq', 'partition': 'validation', 'instructions': 'mcp', 'cot_col': 'exp'},
     'medmcqa': {'task': 'mcq', 'partition': 'validation', 'instructions': 'mcp', 'cot_col': 'exp'},
     'pubmedqa': {'task': 'mcq', 'partition': 'test', 'instructions': 'open_question', 'cot_col': 'long_answer'},
