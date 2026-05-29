@@ -250,6 +250,11 @@ def main(args):
     #if "7b" in args.checkpoint:
     #    kwargs["tensor_parallel_size"] = 4
 
+
+    kwargs["enforce_eager"] = True
+    kwargs["gpu_memory_utilization"] = 0.8
+    kwargs["quantization"] = "awq"
+
     client = vllm.LLM(**kwargs)
 
     logging.info(f'Running inference on {args.benchmark} for {len(data_obj.test_data)} samples')

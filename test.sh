@@ -38,7 +38,8 @@ do
 done
 
 # THE FIX: Point directly to the Hugging Face repo instead of a dead local path
-CHECKPOINT="epfl-llm/meditron-7b"
+#CHECKPOINT="epfl-llm/meditron-7b"
+CHECKPOINT="TheBloke/meditron-7B-AWQ"
 
 echo
 echo "Running inference pipeline"
