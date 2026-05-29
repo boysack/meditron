@@ -341,9 +341,6 @@ class HeadQA(Benchmark):
         row['prompt'] = format_mcq(row['qtext'], options)
         row['gold'] = chr(ord('A')+answer-1) if answer in range(1, len(options)+1) else None # answers are 1-based
 
-        for key in row.keys():
-            if row[key] is None:
-                row[key] = ""
                 
         return row
 

@@ -250,10 +250,11 @@ def main(args):
     #if "7b" in args.checkpoint:
     #    kwargs["tensor_parallel_size"] = 4
 
-
     kwargs["enforce_eager"] = True
     kwargs["gpu_memory_utilization"] = 0.8
-    kwargs["quantization"] = "awq"
+    
+    if "awq" in args.checkpoint:
+        kwargs["quantization"] = "awq"
 
     client = vllm.LLM(**kwargs)
 
